@@ -49,6 +49,7 @@ func TestDomainStdin(t *testing.T) {
 		infile string
 	}{
 		{"test1.txt"},
+		{"readme.txt"},
 	}
 
 	cmd0 := gpntest.FindBinary(t, binary_name)

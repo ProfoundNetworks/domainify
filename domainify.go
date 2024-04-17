@@ -20,6 +20,7 @@ type Options struct {
 func domainify(hostname string) {
 	domain, err := gpnutil.GetEntityDomain(hostname)
 	if err != nil {
+		fmt.Println("")
 		fmt.Fprintf(os.Stderr, "Error: %s\n", err.Error())
 	} else {
 		fmt.Println(domain)
@@ -27,7 +28,7 @@ func domainify(hostname string) {
 }
 
 func runCLI(opts Options) error {
-	if opts.Stdin {
+	if opts.Stdin || len(opts.Args.Hostnames) == 0 {
 		if len(opts.Args.Hostnames) > 0 {
 			return fmt.Errorf("cannot specify hostnames with --stdin")
 		}
