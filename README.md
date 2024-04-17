@@ -14,13 +14,11 @@ used by browsers for restricting the scope of cookies across hostnames.
 Usage
 -----
 
-domainify takes hostnames as arguments, and outputs entity domains to
-standard output, one entity domain per line. A bad hostname or an error
-mapping to an entity domain will result in a blank line being output for
-that input.
-
-Arguments can be givin either as command line arguments, or via standard
-input, one hostname per line, with the `--stdin`  option.
+`domainify` takes hostnames as command line arguments or from stdin (with
+the `--stdin` option, and outputs entity domains to standard output, one
+domain per line. A bad hostname or an error mapping a hostname to an entity
+domain will result in a blank line being output for that input (and sometimes
+an error message to standard error).
 
 For example:
 
@@ -33,7 +31,7 @@ profound.net
 
 wikipedia.org
 
-$ echo -e "hosted.l.google.com\ncom\n31.pool85-61-184.dynamic.orange.es" |
+$ echo -e "hosted.l.google.com\ncom\npool85-61.dynamic.orange.es" |
   domainify --stdin
 google.com
 

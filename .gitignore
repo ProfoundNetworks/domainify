@@ -10,7 +10,7 @@
 /c.out
 /data/*
 /delta/applied/*
-/dist/*
+/dist/
 /domainify
 /go.work
 /node_modules/*
