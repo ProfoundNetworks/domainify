@@ -1,4 +1,7 @@
-version: 1
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+# vim: set ts=2 sw=2 tw=0 fo=cnqoj
+
+version: 2
 
 before:
   hooks:
@@ -11,6 +14,8 @@ builds:
       - linux
       - windows
       - darwin
+    goarch:
+      - amd64
 
 archives:
   - format: tar.gz
@@ -38,9 +43,3 @@ release:
   github:
     owner: ProfoundNetworks
     name: domainify
-
-env_files:
-  github_token: ~/.gh_goreleaser
-
-# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
-# vim: set ts=2 sw=2 tw=0 fo=cnqoj
